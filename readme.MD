@@ -22,11 +22,11 @@ serializers convert data from and to json objects <br>
 To run the project as is and play around before you make changes
 Run the following after cloning the project
 
-``virtualenv env``
-``source env/bin/activate``
-``pip install django djangorestframework``
-``python manage.py makemigrations``
-``python manage.py migrate``
+``virtualenv env`` <br>
+``source env/bin/activate`` <br>
+``pip install django djangorestframework`` <br>
+``python manage.py makemigrations`` <br>
+``python manage.py migrate`` <br>
 python manage.py createsuperuser
 
 
