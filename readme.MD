@@ -21,18 +21,19 @@ serializers convert data from and to json objects <br>
 
 To run the project as is and play around before you make changes
 Run the following after cloning the project
-``
-virtualenv env <br>
-source env/bin/activate <br>
-pip install django djangorestframework <br>
-python manage.py makemigrations <br>
-python manage.py migrate <br>
-python manage.py createsuperuser <br>
-``
+
+``virtualenv env`` <br>
+``source env/bin/activate`` <br>
+``pip install django djangorestframework`` <br>
+``python manage.py makemigrations`` <br>
+``python manage.py migrate`` <br>
+python manage.py createsuperuser
+
 
 Admin login using superuser credentials: http://127.0.0.1:8000/admin <br>
 Get a list of users: http://127.0.0.1:8000/users/ <br>
 Get a list of Posts: http://127.0.0.1:8000/posts/ <br>
+Login API: http://127.0.0.1:8000/api-auth/login/?next=/users/
  
 Make sure you're in the current sprint branch before commiting and pushing changes
 ```
