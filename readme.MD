@@ -2,38 +2,38 @@ This is part of the first sprint. Create user accounts and authentication APIs.
 
 
 # Django Rest Framework API, Project Structure
-eaty <------ Main Django Project (Created by django-admin startproject eaty)
-core <------- This handles our user accounts
-blog <------- blogging section/food blog
+eaty <------ Main Django Project (Created by django-admin startproject eaty)<br>
+core <------- This handles our user accounts<br>
+blog <------- blogging section/food blog<br>
 mealgenerator < -------- gets list of food from user, stores, daily generates meal from this list
 
 # Routing and endpoints
-eaty > urls.py <---- entrypoint for all urls
-eaty > settings.py <---- main settings and config file 
+eaty > urls.py <---- entrypoint for all urls<br>
+eaty > settings.py <---- main settings and config file <br>
 
 # Important files
-Important files per app are
-In this sprint we've created three skeleton apps with demo code
+In this sprint we've created three skeleton apps with starter code
 
-models.py, views.py, serializers.py and urls.py
-Models manages our database
-views handle requests
-serializers convert data from and to json objects
+models.py, views.py, serializers.py and urls.py <br>
+Models manages our database <br>
+views handle requests <br>
+serializers convert data from and to json objects <br>
 
-To run the rproject as is and play around before you make changes
+To run the project as is and play around before you make changes
+Run the following after cloning the project
 ``
-virtualenv env
-source env/bin/activate
-pip install django djangorestframework
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
+virtualenv env <br>
+source env/bin/activate <br>
+pip install django djangorestframework <br>
+python manage.py makemigrations <br>
+python manage.py migrate <br>
+python manage.py createsuperuser <br>
 ``
 
-Admin login using superuser credentials: http://127.0.0.1:8000/admin
-Get a list of users: http://127.0.0.1:8000/users/
-Get a list of Posts: http://127.0.0.1:8000/posts/
-
+Admin login using superuser credentials: http://127.0.0.1:8000/admin <br>
+Get a list of users: http://127.0.0.1:8000/users/ <br>
+Get a list of Posts: http://127.0.0.1:8000/posts/ <br>
+ 
 Make sure you're in the current sprint branch before commiting and pushing changes
 ```
 (env) :/opt/eaty/eaty$ git branch
@@ -47,15 +47,15 @@ Switched to branch 'Sprint-1'
 ```
 
 ## Challenge for this sprint
-This is to challenge your self to see if you've understood the workflow
-Create models for meals
-then an API endpoint to get a list of Meals
-Note the difference between food and Meals
-Food > Ugali, Nyama, Skuma, kales
-Meal > Ugali & Skuma, Ugali & Nyama
+This is to challenge your self to see if you've understood the workflow <br>
+Create models for meals <br>
+then an API endpoint to get a list of Meals <br>
+Note the difference between food and Meals <br>
+Food > Ugali, Nyama, Skuma, kales <br>
+Meal > Ugali & Skuma, Ugali & Nyama <br>
 
-Sprint One ends in June 11th
-Join our Discord Server for more communication and personalized help
+Sprint One ends in **June 11th** <br>
+Join our Discord Server for more communication and personalized help <br>
 https://discord.gg/CYySyHrq
 
 
