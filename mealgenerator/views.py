@@ -1,12 +1,12 @@
 from rest_framework import generics
-from .models import Meals
-from .serializers import MealSerializer
+from .models import Foods
+from .serializers import FoodSerializer
 
-class MealList(generics.ListCreateAPIView):
-    queryset = Meals.objects.all()
-    serializer_class = MealSerializer
+class FoodList(generics.ListCreateAPIView):
+    queryset = Foods.objects.all()
+    serializer_class = FoodSerializer
 
-class MealDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Meals.objects.all()
-    serializer_class = MealSerializer
+class FoodDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Foods.objects.all()
+    serializer_class = FoodSerializer
 

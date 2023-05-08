@@ -1,6 +1,6 @@
 from django.db import models
 
-class Meals(models.Model):
+class Foods(models.Model):
     category = models.CharField(max_length=200)
     food1 = models.TextField()
     food2 = models.TextField()
