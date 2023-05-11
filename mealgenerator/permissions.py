@@ -16,3 +16,6 @@ class IsCreatorOrReadOnly(BasePermission):
 
         # Write permissions are only allowed to the creator of the data.
         return obj.created_by == request.user
+    
+
+    
