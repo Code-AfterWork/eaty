@@ -24,7 +24,7 @@ Run the following after cloning the project
 
 ``virtualenv env`` <br>
 ``source env/bin/activate`` <br>
-``pip install django djangorestframework`` <br>
+``pip install -r requirements.txt`` <br>
 ``python manage.py makemigrations`` <br>
 ``python manage.py migrate`` <br>
 python manage.py createsuperuser
