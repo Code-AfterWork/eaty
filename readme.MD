@@ -73,7 +73,7 @@ https://discord.gg/CYySyHrq
 # Sprint-2
 To view everything related to Sprint-2 only, checkout to Sprint-2 Branch
 For Sprint-2 
- 1. We will a CI using Github actions
+ 1. We will add a CI using Github actions
     -  One pipeline will basically to do a build test for all pull requests.
     - The secodn pipeline will be an action that sends a notif to our discord   Server when there is activity on the project
  2. Add Docker and change to PostgresSQL Database
