@@ -1,6 +1,6 @@
 asgiref==3.6.0
 backports.zoneinfo==0.2.1
-Django==4.2.1
+Django==4.2
 django-rest-authtoken==2.1.4
 djangorestframework==3.14.0
 pytz==2023.3
