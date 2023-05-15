@@ -34,8 +34,8 @@ Admin login using superuser credentials: http://127.0.0.1:8000/admin <br>
 Get a list of users: http://127.0.0.1:8000/users/ <br>
 Get a list of Posts: http://127.0.0.1:8000/posts/ <br>
 Login API: http://127.0.0.1:8000/api-auth/login/?next=/users/ <br>
-API for Food items: http://127.0.0.1:8000/food-categories
-User Registration: http://127.0.0.1:8000/api/register/
+API for Food items: http://127.0.0.1:8000/food-categories <br>
+User Registration: http://127.0.0.1:8000/api/register/ <br>
 (Use a tool like Insomnia and send the POST request with the registration data ) 
  
 Make sure you're in the current sprint branch before commiting and pushing changes
@@ -50,14 +50,14 @@ Switched to branch 'Sprint-1'
   main
 ```
 
-## Sprint-1
+# Sprint-1
 To view everything related to Sprint-1 only, checkout to Sprint-1 Branch
 For Sprint-1
 1. Create the project and the login and registration endpoints
 2. Create Food categories/lists endpoint
 
 
-# Sprint-1 Challenge
+## Sprint-1 Challenge
 This is to challenge your self to see if you've understood the workflow <br>
 Create models for meals <br>
 then an API endpoint to get a list of Meals <br>
@@ -70,7 +70,7 @@ Join our Discord Server for more communication and personalized help <br>
 https://discord.gg/CYySyHrq
 
 
-## Sprint-2
+# Sprint-2
 To view everything related to Sprint-2 only, checkout to Sprint-2 Branch
 For Sprint-2 
  1. We will a CI using Github actions
@@ -79,7 +79,7 @@ For Sprint-2
  2. Add Docker and change to PostgresSQL Database
  3. Create a Login page using VueJs
 
-# Sprint-2 Challenge
+## Sprint-2 Challenge
 Using the http://127.0.0.1:8000/food-categories, create a meal from that and store it as a separate model which can be retrieved as an API Endpoint
 
 
