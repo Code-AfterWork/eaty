@@ -6,21 +6,30 @@ This is part of the first sprint. Create user accounts and authentication APIs.
 
 
 # Django Rest Framework API, Project Structure
+Django structures its architecture as apps. Each app to handle a specific function.
 eaty <------ Main Django Project (Created by django-admin startproject eaty)<br>
 core <------- This handles our user accounts<br>
 blog <------- blogging section/food blog<br>
 mealgenerator < -------- gets list of food from user, stores, daily generates meal from this list
 
 # Routing and endpoints
-eaty > urls.py <---- entrypoint for all urls<br>
+eaty > urls.py <---- entrypoint for all urls/routes<br>
 eaty > settings.py <---- main settings and config file <br>
+
+Admin login using superuser credentials: http://127.0.0.1:8000/admin <br>
+Get a list of users: http://127.0.0.1:8000/users/ <br>
+Get a list of Posts: http://127.0.0.1:8000/posts/ <br>
+Login API: http://127.0.0.1:8000/api-auth/login/?next=/users/ <br>
+API for Food items: http://127.0.0.1:8000/food-categories <br>
+User Registration: http://127.0.0.1:8000/api/register/ <br>
+(Use a tool like Insomnia and send the POST request with the registration data ) 
 
 # Important files
 In this sprint we've created three skeleton apps with starter code
 
 models.py, views.py, serializers.py and urls.py <br>
 Models manages our database <br>
-views handle requests <br>
+views handles requests <br>
 serializers convert data from and to json objects <br>
 
 To run the project as is and play around before you make changes
@@ -31,16 +40,10 @@ Run the following after cloning the project
 ``pip install -r requirements.txt`` <br>
 ``python manage.py makemigrations`` <br>
 ``python manage.py migrate`` <br>
-python manage.py createsuperuser
+``python manage.py createsuperuser``
 
 
-Admin login using superuser credentials: http://127.0.0.1:8000/admin <br>
-Get a list of users: http://127.0.0.1:8000/users/ <br>
-Get a list of Posts: http://127.0.0.1:8000/posts/ <br>
-Login API: http://127.0.0.1:8000/api-auth/login/?next=/users/ <br>
-API for Food items: http://127.0.0.1:8000/food-categories <br>
-User Registration: http://127.0.0.1:8000/api/register/ <br>
-(Use a tool like Insomnia and send the POST request with the registration data ) 
+
  
 Make sure you're in the current sprint branch before commiting and pushing changes
 ```
