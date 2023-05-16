@@ -1,8 +1,8 @@
 This is part of the first sprint. Create user accounts and authentication APIs.
 
-Video walkthrough of Sprint-1 can be found here: 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rFlxb11Zf5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![Sprint-1 Overview](https://img.youtube.com/vi/rFlxb11Zf5Y/0.jpg)](https://www.youtube.com/watch?v=rFlxb11Zf5Y)
+
 
 
 # Django Rest Framework API, Project Structure
