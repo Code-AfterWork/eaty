@@ -1,9 +1,9 @@
 This is part of the first sprint. Create user accounts and authentication APIs.
 
 
-[![Sprint-1 Overview](https://img.youtube.com/vi/rFlxb11Zf5Y/0.jpg)](https://www.youtube.com/watch?v=rFlxb11Zf5Y)
-
-
+#Video Tutorials
+[Sprint-1 Review](https://www.youtube.com/watch?v=rFlxb11Zf5Y&t=405s)
+[Containerizing our API](https://www.youtube.com/watch?v=txr1_Eme6nM)
 
 # Django Rest Framework API, Project Structure
 Django structures its architecture as apps. Each app to handle a specific function.
@@ -35,12 +35,20 @@ serializers convert data from and to json objects <br>
 To run the project as is and play around before you make changes
 Run the following after cloning the project
 
-``virtualenv env`` <br>
-``source env/bin/activate`` <br>
-``pip install -r requirements.txt`` <br>
-``python manage.py makemigrations`` <br>
-``python manage.py migrate`` <br>
-``python manage.py createsuperuser``
+Install [docker](https://medium.com/@mosesmbadi/what-is-devops-part-2-containerization-8b8b65cf8f96)
+
+Start by launcing the container:
+``docker compose up`` <br>
+
+Launch the container migrate the db and create superuser
+
+```
+docker exec -ti -u root  82752d8c2b76 /bin/bash
+python manage.py makemigrations
+source env/bin/activate
+python manage.py migrate
+python manage.py createsuperuser
+```
 
 
 
