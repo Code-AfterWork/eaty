@@ -1,11 +1,8 @@
-This is part of the first sprint. Create user accounts and authentication APIs.
-
-
 #Video Tutorials <br>
 [Sprint-1 Review](https://www.youtube.com/watch?v=rFlxb11Zf5Y&t=405s)<br>
 [Containerizing our API](https://www.youtube.com/watch?v=txr1_Eme6nM)
 
-# How to ruun the project
+# How to run the project
 To run the project as is and play around before you make changes
 Run the following after cloning the project
 
@@ -95,7 +92,13 @@ For Sprint-2
  3. Create a Login page using VueJs
 
 ## Sprint-2 Challenge
-Using the http://127.0.0.1:8000/food-categories, create a meal from that and store it as a separate model which can be retrieved as an API Endpoint
+Using the /food-categories endpoint, create a meal from that and store it as a separate model which can be retrieved as an API Endpoint
+
+
+## Donation
+We are going for a real-world example of a DevOps project. There are a few free services we'll use but in c=some cases we'll need to use premium/paid subscriptions in order to simulate a real-world use case. If you feel a little generous and would like to contribute in purchasing any of the services, you can make a donation here or you can reach out to the Community Lead: mbadim@proton.me
+
+[![Donate with PayPal](https://raw.githubusercontent.com/stefan-niedermann/paypal-donate-button/master/paypal-donate-button.png)](www.paypal.com/donate/?hosted_button_id=45A3RRNJMNAGQ)
 
 
 
