@@ -5,6 +5,33 @@ This is part of the first sprint. Create user accounts and authentication APIs.
 [Sprint-1 Review](https://www.youtube.com/watch?v=rFlxb11Zf5Y&t=405s)<br>
 [Containerizing our API](https://www.youtube.com/watch?v=txr1_Eme6nM)
 
+# How to ruun the project
+To run the project as is and play around before you make changes
+Run the following after cloning the project
+
+Install [docker](https://medium.com/@mosesmbadi/what-is-devops-part-2-containerization-8b8b65cf8f96)
+
+Start by launching the container:
+``docker compose up`` <br>
+
+Launch the container migrate the db and create superuser
+
+```
+docker exec -ti -u root  82752d8c2b76 /bin/bash
+python manage.py createsuperuser
+```
+
+
+# Important files
+In this sprint we've created three skeleton apps with starter code
+
+models.py, views.py, serializers.py and urls.py <br>
+Models manages our database <br>
+views handles requests <br>
+serializers convert data from and to json objects <br>
+
+
+
 # Django Rest Framework API, Project Structure
 Django structures its architecture as apps. Each app to handle a specific function.
 eaty <------ Main Django Project (Created by django-admin startproject eaty)<br>
@@ -24,28 +51,6 @@ API for Food items: http://127.0.0.1:8000/food-categories <br>
 User Registration: http://127.0.0.1:8000/api/register/ <br>
 (Use a tool like Insomnia and send the POST request with the registration data ) 
 
-# Important files
-In this sprint we've created three skeleton apps with starter code
-
-models.py, views.py, serializers.py and urls.py <br>
-Models manages our database <br>
-views handles requests <br>
-serializers convert data from and to json objects <br>
-
-To run the project as is and play around before you make changes
-Run the following after cloning the project
-
-Install [docker](https://medium.com/@mosesmbadi/what-is-devops-part-2-containerization-8b8b65cf8f96)
-
-Start by launching the container:
-``docker compose up`` <br>
-
-Launch the container migrate the db and create superuser
-
-```
-docker exec -ti -u root  82752d8c2b76 /bin/bash
-python manage.py createsuperuser
-```
 
  
 Make sure you're in the current sprint branch before commiting and pushing changes
