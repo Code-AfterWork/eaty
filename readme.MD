@@ -98,7 +98,7 @@ Using the /food-categories endpoint, create a meal from that and store it as a s
 ## Donation
 We are going for a real-world example of a DevOps project. There are a few free services we'll use but in c=some cases we'll need to use premium/paid subscriptions in order to simulate a real-world use case. If you feel a little generous and would like to contribute in purchasing any of the services, you can make a donation here or you can reach out to the Community Lead: mbadim@proton.me
 
-[![Donate with PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](www.paypal.com/donate/?hosted_button_id=45A3RRNJMNAGQ)
+[![Donate with PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=45A3RRNJMNAGQ)
 
 
 
