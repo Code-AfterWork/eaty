@@ -1,8 +1,8 @@
 name: Build-Test CI
 
 on:
-  push:
-    branches: [ "main" ]
+  # push:
+  #   branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
@@ -28,4 +28,4 @@ jobs:
         pip install psycopg2
     - name: Run Tests
       run: |
-        python manage.py test
+        python ./backend/manage.py test
