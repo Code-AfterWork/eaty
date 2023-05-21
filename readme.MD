@@ -2,7 +2,7 @@
 [Sprint-1 Review](https://www.youtube.com/watch?v=rFlxb11Zf5Y&t=405s)<br>
 [Containerizing our API](https://www.youtube.com/watch?v=txr1_Eme6nM)
 
-# How to run the project
+# How to run
 To run the project as is and play around before you make changes
 Run the following after cloning the project
 
@@ -17,8 +17,18 @@ Launch the container migrate the db and create superuser
 docker exec -ti -u root  82752d8c2b76 /bin/bash
 python manage.py createsuperuser
 ```
+(Frontend not connected to backend at this point)
+A quick preview of the frontend can be seen through
+& cd frontend
+```
+npm install
+npm run serve
+npm run build
+npm run lint
+```
 
-
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
 # Important files
 In this sprint we've created three skeleton apps with starter code
 
