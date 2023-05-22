@@ -17,18 +17,12 @@ Launch the container migrate the db and create superuser
 docker exec -ti -u root  82752d8c2b76 /bin/bash
 python manage.py createsuperuser
 ```
-(Frontend not connected to backend at this point)
-A quick preview of the frontend can be seen through
-& cd frontend
-```
-npm install
-npm run serve
-npm run build
-npm run lint
-```
+(Frontend not cointegrated with backend at this point but can be run with docker compose up)
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
 # Important files
 In this sprint we've created three skeleton apps with starter code
 
