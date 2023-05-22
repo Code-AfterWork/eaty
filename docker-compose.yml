@@ -1,18 +1,7 @@
 version: '3.8'
 
 services:
-  web:
-    build: ./backend
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - app:/usr/src/app/
-    ports:
-      - 8000:8000
-    env_file:
-      - ./.env
-    depends_on:
-      - db
-  db:
+  eaty-database: 
     image: postgres:13.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
@@ -21,6 +10,25 @@ services:
       - POSTGRES_PASSWORD=hello_django
       - POSTGRES_DB=hello_django_dev
 
+  eaty-backend:
+    build: ./backend
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - backend:/usr/src/app/
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env
+    depends_on:
+      - eaty-database
+
+  eaty-frontend:
+    build:
+      context: ./frontend
+    ports:
+      - 8080:8080
+
 volumes:
   postgres_data:
-  app:
+  backend:
+  frontend:
