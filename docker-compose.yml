@@ -27,6 +27,8 @@ services:
       context: ./frontend
     ports:
       - 8080:8080
+    # volumes:
+    #   - ./frontend:/app  
 
 volumes:
   postgres_data:
