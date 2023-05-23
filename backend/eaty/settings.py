@@ -9,8 +9,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-h$k*-fur=@bk0!n-y^sez3^!1olnrg3eu*(*)2=tp0y$fjqk$w'
-
+# SECRET_KEY = 'django-insecure-h$k*-fur=@bk0!n-y^sez3^!1olnrg3eu*(*)2=tp0y$fjqk$w'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -63,13 +63,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'eaty.wsgi.application'
 
-
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('DB_DRIVER','django.db.backends.postgresql'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hello_django_dev',
+        'USER': 'hello_django',
+        'PASSWORD': 'hello_django',
+        'HOST': 'eaty-database',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
