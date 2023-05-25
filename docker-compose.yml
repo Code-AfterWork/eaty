@@ -1,15 +1,17 @@
 version: '3.8'
 
 services:
+########## FIRST SERVICE - DATABASE
   eaty-database: 
     image: postgres:13.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=hello_django
-      - POSTGRES_PASSWORD=hello_django
-      - POSTGRES_DB=hello_django_dev
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
 
+########## SECOND SERVICE - API
   eaty-backend:
     build: ./backend
     command: python manage.py runserver 0.0.0.0:8000
@@ -17,11 +19,14 @@ services:
       - backend:/usr/src/app/
     ports:
       - 8000:8000
-    env_file:
-      - ./.env
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     depends_on:
       - eaty-database
 
+########## THIRD SERVICE - FRONTEND
   eaty-frontend:
     build:
       context: ./frontend
