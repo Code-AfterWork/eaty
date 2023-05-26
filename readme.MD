@@ -48,7 +48,7 @@ Admin login using superuser credentials: http://127.0.0.1:8000/admin <br>
 Get a list of users: http://127.0.0.1:8000/users/ <br>
 Get a list of Posts: http://127.0.0.1:8000/posts/ <br>
 Login API: http://127.0.0.1:8000/api-auth/login/?next=/users/ <br>
-API for Food items: http://127.0.0.1:8000/food-categories <br>
+API for Food items: http://127.0.0.1:8000/foods <br>
 User Registration: http://127.0.0.1:8000/api/register/ <br>
 (Use a tool like Insomnia and send the POST request with the registration data ) 
 
@@ -96,7 +96,7 @@ For Sprint-2
  3. Create a Login page using VueJs
 
 ## Sprint-2 Challenge
-Using the /food-categories endpoint, create a meal from that and store it as a separate model which can be retrieved as an API Endpoint
+Using the /foods endpoint, create a meal from that and store it as a separate model which can be retrieved as an API Endpoint
 
 
 ## Donation
