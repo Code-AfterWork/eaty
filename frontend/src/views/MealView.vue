@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="meals">
     <h1>Foods</h1>
     <ul>
       <li v-for="food in foods" :key="food.id">
@@ -9,6 +9,18 @@
     </ul>
   </div>
 </template>
+
+
+
+
+<style>
+  .meals {
+    background-color: aliceblue;
+    color: rgb(24, 25, 25);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+</style>
 
 <script>
 import axios from 'axios';
