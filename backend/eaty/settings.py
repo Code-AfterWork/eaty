@@ -15,7 +15,8 @@ SECRET_KEY = 'django-insecure-h$k*-fur=@bk0!n-y^sez3^!1olnrg3eu*(*)2=tp0y$fjqk$w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -32,9 +33,13 @@ INSTALLED_APPS = [
     'core',
     'blog',
     'mealgenerator',
+    'corsheaders',
 ]
 
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -43,6 +48,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+CORS_ORIGIN_WHITELIST = ['http://localhost:8080']
 
 ROOT_URLCONF = 'eaty.urls'
 
@@ -70,7 +78,7 @@ DATABASES = {
         'NAME': os.environ.get('POSTGRES_NAME'),
         'USER': os.environ.get('POSTGRES_USER'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': 'eaty-database',
+        'HOST': 'db',
         'PORT': 5432,
     }
 }
