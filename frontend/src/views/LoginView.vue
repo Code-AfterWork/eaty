@@ -31,7 +31,7 @@
     width: 500px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #583939;
     border-radius: 5px;
     box-shadow: 0 0 10px 0 #ccc;
   }

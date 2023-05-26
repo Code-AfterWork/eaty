@@ -11,13 +11,17 @@ Install [docker](https://medium.com/@mosesmbadi/what-is-devops-part-2-containeri
 Start by launching the container:
 ``docker compose up`` <br>
 
+
 Launch the container migrate the db and create superuser
 
 ```
 docker exec -ti -u root  82752d8c2b76 /bin/bash
 python manage.py createsuperuser
+python manage.py migrate
 ```
-(Frontend not cointegrated with backend at this point but can be run with docker compose up)
+
+'82752d8c2b76' <-- refers to the container ID. You can get the ID by running 
+``docker ps``
 
 
 ### Customize configuration
