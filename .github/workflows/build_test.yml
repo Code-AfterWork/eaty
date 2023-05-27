@@ -47,9 +47,11 @@ jobs:
           ubuntu-18.04,
         ]
 
+
+
     services:
-      postgres:
-        image: postgres:12
+      db: 
+        image: postgres:13.0-alpine
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
