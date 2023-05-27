@@ -89,9 +89,9 @@ jobs:
         pip install -r ./backend/requirements.txt
         pip install pytest-django
     - name: Run migrations
-      run: python manage.py migrate
+      run: python ./backend/manage.py migrate
     - name: Validate Project
-      run: python manage.py check
+      run: python ./backend/manage.py check
     - name: Run Tests
-      run: python manage.py test
+      run: python ./backend/manage.py test
 
