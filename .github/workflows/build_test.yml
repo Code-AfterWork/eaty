@@ -1,31 +1,67 @@
+# name: Build-Test CI
+
+# on:
+#   # push:
+#   #   branches: [ "main" ]
+#   pull_request:
+#     branches: [ "main" ]
+
+# jobs:
+#   build:
+
+#     runs-on: ubuntu-latest
+#     strategy:
+#       max-parallel: 4
+#       matrix:
+#         python-version: [3.9]
+
+#     steps:
+#     - uses: actions/checkout@v3
+#     - name: Set up Python ${{ matrix.python-version }}
+#       uses: actions/setup-python@v3
+#       with:
+#         python-version: ${{ matrix.python-version }}
+#     - name: Install Dependencies
+#       run: |
+#         python -m pip install --upgrade pip
+#         pip install -r ./backend/requirements.txt
+#         pip install psycopg2
+#     - name: Run Tests
+#       run: |
+#         python ./backend/manage.py test
+
+
 name: Build-Test CI
 
 on:
-  # push:
-  #   branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - "*"
+  push:
+    branches:
+      - "main"
+      - "master"
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: [3.8]
+  test:
+    runs-on: "ubuntu-22.04"
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r ./backend/requirements.txt
-        pip install psycopg2
-    - name: Run Tests
-      run: |
-        python ./backend/manage.py test
+      - uses: "actions/checkout@v2"
+
+      - name: "Install CI dependencies"
+        run: |
+          ./run ci:install-deps
+
+      - name: "Test"
+        run: |
+          # Remove volumes in CI to avoid permission errors due to UID / GID.
+          sed -i "s|.:/app|/tmp:/tmp|g" .env*
+          sed -i "s|.:/app|/tmp:/tmp|g" docker-compose.yml
+
+          # Django requires static files to be collected in order to run its
+          # test suite. That means we need to generate production assets from
+          # esbuild. This line ensures NODE_ENV is set to production.
+          sed -i "s|export NODE_ENV|#export NODE_ENV|g" .env*
+
+          ./run ci:test
