@@ -4,17 +4,15 @@
 [Sprint-1 Review](https://www.youtube.com/watch?v=rFlxb11Zf5Y&t=405s)<br>
 [Containerizing our API](https://www.youtube.com/watch?v=txr1_Eme6nM)
 
-# How to run
-To run the project as is and play around before you make changes
-Run the following after cloning the project
+## How to run
+To run the project as is and play around before you make changes, you should have docker and a preferred code editor installed.
 
 Install [docker](https://medium.com/@mosesmbadi/what-is-devops-part-2-containerization-8b8b65cf8f96)
 
-Start by launching the container:
+After cloning the repo locally, run:
 ``docker compose up`` <br>
 
-
-Launch the container migrate the db and create superuser
+This launches all the services required, exec into the backend container, migrate the db and create superuser
 
 ```
 docker exec -ti -u root  82752d8c2b76 /bin/bash
@@ -26,10 +24,11 @@ python manage.py migrate
 ``docker ps``
 
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Study Group
+Follow the conversation on Discord [Join Discord Srrver](https://discord.gg/T24PXQS9).
 
-# Important files
+
+## Important files - Backend
 In this sprint we've created three skeleton apps with starter code
 
 models.py, views.py, serializers.py and urls.py <br>
@@ -39,16 +38,16 @@ serializers convert data from and to json objects <br>
 
 
 
-# Django Rest Framework API, Project Structure
+## Django Rest Framework API, Project Structure
 Django structures its architecture as apps. Each app to handle a specific function.
-eaty <------ Main Django Project (Created by django-admin startproject eaty)<br>
-core <------- This handles our user accounts<br>
+eaty <------ Main Django Project (Created by ``django-admin startproject eaty``)<br>
+core <------- This handles our user accounts and authentication<br>
 blog <------- blogging section/food blog<br>
-mealgenerator < -------- gets list of food from user, stores, daily generates meal from this list
+mealgenerator < -------- gets list of food from users, stores, daily generates meal from this list
 
-# Routing and endpoints
-eaty > urls.py <---- entrypoint for all urls/routes<br>
-eaty > settings.py <---- main settings and config file <br>
+## Routing and endpoints - Backend
+./backend/eaty/urls.py <---- entrypoint for all API urls/routes<br>
+./backend/eaty/settings.py <---- main settings and config file <br>
 
 Admin login using superuser credentials: http://127.0.0.1:8000/admin <br>
 Get a list of users: http://127.0.0.1:8000/users/ <br>
@@ -72,14 +71,14 @@ Switched to branch 'Sprint-1'
   main
 ```
 
-# Sprint-1
+## Sprint-1
 To view everything related to Sprint-1 only, checkout to Sprint-1 Branch
 For Sprint-1
 1. Create the project and the login and registration endpoints
 2. Create Food categories/lists endpoint
 
 
-## Sprint-1 Challenge
+### Sprint-1 Challenge
 This is to challenge your self to see if you've understood the workflow <br>
 Create models for meals <br>
 then an API endpoint to get a list of Meals <br>
@@ -92,21 +91,21 @@ Join our Discord Server for more communication and personalized help <br>
 https://discord.gg/CYySyHrq
 
 
-# Sprint-2
+## Sprint-2
 To view everything related to Sprint-2 only, checkout to Sprint-2 Branch
 For Sprint-2 
  1. We will add a CI using Github actions
     -  One pipeline will basically to do a build test for all pull requests.
     - The secodn pipeline will be an action that sends a notif to our discord   Server when there is activity on the project
  2. Add Docker and change to PostgresSQL Database
- 3. Create a Login page using VueJs
+ 3. Create a Login page using VueJs/React
 
-## Sprint-2 Challenge
+### Sprint-2 Challenge
 Using the /foods endpoint, create a meal from that and store it as a separate model which can be retrieved as an API Endpoint
 
 
 ## Donation
-We are going for a real-world example of a DevOps project. There are a few free services we'll use but in c=some cases we'll need to use premium/paid subscriptions in order to simulate a real-world use case. If you feel a little generous and would like to contribute in purchasing any of the services, you can make a donation here or you can reach out to the Community Lead: mbadim@proton.me
+We are going for a real-world example of a DevOps project. There are a few free services we'll use but in some cases we'll need to use premium/paid subscriptions in order to simulate a real-world use case and gain experience. If you feel a little generous and would like to contribute in purchasing any of the services, you can make a donation here or you can reach out to the Community Lead: Moses Mbadi - mbadim@proton.me
 
 [![Donate with PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=45A3RRNJMNAGQ)
 
