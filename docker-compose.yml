@@ -6,6 +6,7 @@ services:
     image: postgres:13.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+      - ./postgres_data:/var/lib/postgresql/data/
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -27,16 +28,30 @@ services:
     depends_on:
       - db
 
-########## THIRD SERVICE - FRONTEND
+########## THIRD SERVICE - FRONTEND-vue
   frontend:
     build:
-      context: ./frontend
+      context: ./frontend-vue
     ports:
       - 8080:8080
     volumes:
-       - frontend:/app 
+       - frontend-vue:/app 
+
+######### THIRD SERVICE - FRONTEND-react
+  frontend-react:
+    build:
+      context: ./frontend-react
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend-react/src:/app/src
+      - ./frontend-react/public:/app/public
+      - ./frontend-react/package.json:/app/package.json
+      - ./frontend-react/index.html:/app/index.html    
 
 volumes:
   postgres_data:
   backend:
-  frontend:
+  frontend-vue:
+  frontend-react:

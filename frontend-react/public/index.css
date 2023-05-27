@@ -1,0 +1,137 @@
+:root {
+  --primary-color: #67b1c6;
+}
+
+html,
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  height: 100%;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.header a {
+  font-size: 18px;
+}
+
+.header a.active {
+  font-weight: bold;
+  color: purple;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 34px;
+  align-items: center;
+}
+
+main,
+.header,
+footer {
+  padding: 37px 60px;
+}
+
+main,
+footer {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+main {
+  overflow-y: auto;
+}
+
+#root {
+  display: grid;
+  grid-template-rows: 95px auto 125px;
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  border-radius: 30px;
+  color: var(--primary-color);
+  font-size: 16px;
+  padding: 9px 36px;
+  height: fit-content;
+  cursor: pointer;
+}
+
+button.primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+p {
+  line-height: 33px;
+}
+
+p:not(:last-of-type) {
+  margin-bottom: 40px;
+}
+
+.article-title {
+  margin-bottom: 15px;
+}
+
+.article-title ~ p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 30px;
+  margin-top: 0;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+label input {
+  width: 334px;
+}
+
+input {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #979797;
+  border-radius: 3px;
+}
+
+label > div {
+  display: flex;
+  column-gap: 8px;
+}
+
+.logout {
+  margin-left: auto;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 18px;
+}
