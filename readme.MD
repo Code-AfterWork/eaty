@@ -23,6 +23,15 @@ python manage.py migrate
 '82752d8c2b76' <-- refers to the container ID. You can get the ID by running 
 ``docker ps``
 
+## If you prefer not using docker (docker images can be data consuming if you're on limited data) you can run manually with this steps
+Set Up virtual environment, I'm assuming you have virtualenv installed
+Change to sqlite3 in settings by uncommenting and commenting the appropriate sections
+```
+virtualenv venv
+source venv/bin/activate
+python backend/manage.py runserver
+```
+
 
 ## Study Group
 Follow the conversation on Discord [Join Discord Srrver](https://discord.gg/T24PXQS9).
