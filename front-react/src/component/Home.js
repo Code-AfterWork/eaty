@@ -1,34 +1,29 @@
-import {useEffect, useState} from "react";
-import axios from "axios";
-import {Navigate} from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
+
+// When a user is logged in, they are redirected here
 export const Home = () => {
-    const [message, setMessage] = useState('');
+  const [foods, setFoods] = useState([]);
 
-    useEffect(() => {
-        if(localStorage.getItem('access_token') === null){
-            window.location.href = '/login'  
-        }
-        else{
-            (async () => {
-            try {
-                const {data} = await axios.get('http://localhost:8000/home/', {
-                headers: {
-                  'Content-Type': 'application/json',
-                }
-              });
+  useEffect(() => {
+    axios.get('http://localhost:8000/foods/')
+      .then((response) => {
+        setFoods(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-              setMessage(data.message);
-            } catch (e) {
-                console.log('not auth')
-            }
-        })()};
-    }, []);
-
-
-
-    return <div className="form-signin mt-5 text-center">
-        <h3>Hi {message}</h3>
-        
+  return (
+    <div>
+      {foods.map((food) => (
+        <div key={food.id}>
+          <h2>{food.name}</h2>
+          <p>{food.food}</p>
+        </div>
+      ))}
     </div>
-}
+  );
+};
