@@ -17,7 +17,7 @@ services:
     build: ./backend
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-       - backend:/usr/src/app/
+       - ./backend:/usr/src/app/
 
     ports:
       - 8000:8000
@@ -28,30 +28,15 @@ services:
     depends_on:
       - db
 
-# ########## THIRD SERVICE - FRONTEND-vue
-#   frontend:
-#     build:
-#       context: ./frontend-vue
-#     ports:
-#       - 8080:8080
-#     volumes:
-#        - frontend-vue:/app 
-
-# ######### THIRD SERVICE - FRONTEND-react
-#   frontend-react:
-#     build:
-#       context: ./frontend-react
-#       dockerfile: Dockerfile
-#     ports:
-#       - 3000:3000
-#     volumes:
-#       - ./frontend-react/src:/app/src
-#       - ./frontend-react/public:/app/public
-#       - ./frontend-react/package.json:/app/package.json
-#       - ./frontend-react/index.html:/app/index.html    
+########## FIRST SERVICE - DATABASE
+  front: 
+    build: ./front-react
+    ports:
+      - 3000:3000
+    volumes:
+      - ./front-react:/app
+      
 
 volumes:
   postgres_data:
-  backend:
-  frontend-vue:
-  frontend-react:
+

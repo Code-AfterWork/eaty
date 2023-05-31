@@ -88,6 +88,7 @@ WSGI_APPLICATION = 'eaty.wsgi.application'
 # }
 
 # 
+## 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -124,7 +125,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
 
-                'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
