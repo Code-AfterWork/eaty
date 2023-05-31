@@ -8,6 +8,7 @@ import {RegisterUser} from './component/Registration';
 
 function App() {
     return <BrowserRouter>
+
     <Navigation></Navigation>
         <Routes>
             <Route path="/" element={<Home/>}/>

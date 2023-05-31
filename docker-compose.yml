@@ -17,7 +17,7 @@ services:
     build: ./backend
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-       - backend:/usr/src/app/
+       - ./backend:/usr/src/app/
 
     ports:
       - 8000:8000
@@ -27,8 +27,16 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
- 
+
+########## FIRST SERVICE - DATABASE
+  front: 
+    build: ./front-react
+    ports:
+      - 3000:3000
+    volumes:
+      - ./front-react:/app
+      
 
 volumes:
   postgres_data:
-  backend:
+

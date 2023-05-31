@@ -15,7 +15,7 @@ export function Navigation() {
     
     <div>
     <Navbar bg="dark" variant="dark">
-          <Navbar.Brand href="/">Welcome to Eaty</Navbar.Brand>
+          <Navbar.Brand href="/">Welcome to Eaty!</Navbar.Brand>
           <Nav className="me-auto">
           {isAuth ?
             <Nav.Link href="/">Home</Nav.Link>
@@ -23,9 +23,7 @@ export function Navigation() {
           </Nav>
 
           <Nav>
-          {isAuth ?
-            <Nav.Link href="/register">User Registration</Nav.Link>
-            : null}
+            {isAuth ? null : <Nav.Link href="/register">Sign Up</Nav.Link>}
           </Nav>
 
           <Nav>
