@@ -6,6 +6,8 @@ import {Navigation} from './component/navigation';
 import {Logout} from './component/logout';
 import {RegisterUser} from './component/Registration';
 
+
+
 function App() {
     return <BrowserRouter>
 

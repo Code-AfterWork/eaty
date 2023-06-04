@@ -4,7 +4,7 @@ from .models import *
 class FoodSerializer(serializers.ModelSerializer):
     class Meta:
         model = Food
-        fields = ['name']
+        fields = ['category']
 
 class FoodCategorySerializer(serializers.ModelSerializer):
     # foods = FoodSerializer(many=True, read_only=True)
@@ -12,7 +12,13 @@ class FoodCategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FoodCategory
-        fields = ['name', 'food']
+        fields = ['id', 'category', 'food']
 
 
+# handles POST
+class FoodCreateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Food
+        fields = ('id', 'category', 'food')
 

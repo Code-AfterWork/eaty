@@ -22,17 +22,6 @@ export const Logout = () => {
         })();
     }, []);
 
-
-        
-
-        // console.log(data)
-        // localStorage.clear();
-        // localStorage.setItem('token', data.access);
-        // localStorage.setItem('refresh_token', data.refresh);
-        // axios.defaults.headers.common['Authorization'] = `Bearer ${data['access']}`;
-        // window.location.href = '/'
-
-
     return (
         <div></div>
     )
