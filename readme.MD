@@ -23,7 +23,7 @@ python manage.py migrate
 '82752d8c2b76' <-- refers to the container ID. You can get the ID by running 
 ``docker ps``
 
-## If you prefer not using docker (docker images can be data consuming if you're on limited data) you can run manually with this steps
+### If you prefer not using docker (docker images can be data consuming if you're on limited data) you can run manually with this steps
 Set Up virtual environment, I'm assuming you have virtualenv installed
 Change to sqlite3 in settings by uncommenting and commenting the appropriate sections
 ```
@@ -62,6 +62,7 @@ Admin login using superuser credentials: http://127.0.0.1:8000/admin <br>
 Get a list of users: http://127.0.0.1:8000/users/ <br>
 Get a list of Posts: http://127.0.0.1:8000/posts/ <br>
 Login API: http://127.0.0.1:8000/api-auth/login/?next=/users/ <br>
+List of food categories: http://127.0.0.1:8000/foodcategories/ <br>
 API for Food items: http://127.0.0.1:8000/foods <br>
 User Registration: http://127.0.0.1:8000/api/register/ <br>
 (Use a tool like Insomnia and send the POST request with the registration data ) 
@@ -109,8 +110,19 @@ For Sprint-2
  2. Add Docker and change to PostgresSQL Database
  3. Create a Login page using VueJs/React
 
-### Sprint-2 Challenge
+ ### Sprint-2 Challenge
 Using the /foods endpoint, create a meal from that and store it as a separate model which can be retrieved as an API Endpoint
+
+ ## Sprint-3
+To view everything related to Sprint-3 only, checkout to Sprint-3 Branch
+For Sprint-3
+ 1. Food upload form that updates list of foods in the db
+ 2. Meal generate function - generates random food from /foods endpoint
+ 3. Push image to dockerhub, with automated updates
+            - CI to auto update images to dockerhub
+ 4. Write production Dockerfile and docker compose        
+
+
 
 
 ## Donation

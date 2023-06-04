@@ -14,17 +14,19 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-
-
-class FoodCategoryList(generics.ListAPIView):
+class FoodList(generics.ListAPIView):
     queryset = FoodCategory.objects.all()
     serializer_class = FoodCategorySerializer
 
     permission_classes = [permissions.AllowAny]
 
-    # # if enabled only authenticated users can view endpoint data
-    # permission_classes = [permissions.IsAuthenticated]
 
+class FoodCategoryList(APIView):
+    def get(self, request):
+        categories = FoodCategory.objects.all()
+        return Response(categories.values())
+    
+    permission_classes = [permissions.AllowAny]
 
 # handles POST
 class FoodCreateView(APIView):
