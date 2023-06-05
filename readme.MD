@@ -81,6 +81,10 @@ Switched to branch 'Sprint-1'
   main
 ```
 
+## Jenkins
+Replaced CI/CD on Github Actions with Jenkins
+Install Jenkins then follow instructions to run a Tes CI for DRF
+
 ## Sprint-1
 To view everything related to Sprint-1 only, checkout to Sprint-1 Branch
 For Sprint-1
