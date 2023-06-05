@@ -1,5 +1,3 @@
-[![Build-Test CI](https://github.com/Code-AfterWork/eaty/actions/workflows/build_test.yml/badge.svg)](https://github.com/Code-AfterWork/eaty/actions/workflows/build_test.yml)
-
 #Video Tutorials <br>
 [Sprint-1 Review](https://www.youtube.com/watch?v=rFlxb11Zf5Y&t=405s)<br>
 [Containerizing our API](https://www.youtube.com/watch?v=txr1_Eme6nM)
