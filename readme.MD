@@ -1,4 +1,4 @@
-#Video Tutorials <br>
+## Video Tutorials <br>
 [Sprint-1 Review](https://www.youtube.com/watch?v=rFlxb11Zf5Y&t=405s)<br>
 [Containerizing our API](https://www.youtube.com/watch?v=txr1_Eme6nM)
 
@@ -21,7 +21,7 @@ python manage.py migrate
 '82752d8c2b76' <-- refers to the container ID. You can get the ID by running 
 ``docker ps``
 
-### If you prefer not using docker (docker images can be data consuming if you're on limited data) you can run manually with this steps
+#### If you prefer not using docker (docker images can be data consuming if you're on limited data) you can run manually with this steps
 Set Up virtual environment, I'm assuming you have virtualenv installed
 Change to sqlite3 in settings by uncommenting and commenting the appropriate sections
 ```

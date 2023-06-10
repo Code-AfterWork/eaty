@@ -33,7 +33,9 @@ export const FoodList = () => {
                   <Card.Body>
                     <Card.Title>{food.category}</Card.Title>
                     <Card.Text>
-                      {food.food}
+                      <ul>
+                        <li>{food.food}</li>
+                      </ul>
                     </Card.Text>
                   </Card.Body>
                   <Card.Footer>

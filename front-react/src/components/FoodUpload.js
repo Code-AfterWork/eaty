@@ -1,99 +1,6 @@
-
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import { Container, Button } from 'react-bootstrap';
-
-
-
-// export const FoodUpload = () => {
-//   const [foods, setFoods] = useState([]);
-//   const [foodName, setFoodName] = useState('');
-//   const [category, setCategory] = useState('');
-//   const [foodCategories, setFoodCategories] = useState([]);
-
-//   useEffect(() => {
-//     axios.get('http://localhost:8000/foods/')
-//       .then((response) => {
-//         setFoods(response.data);
-//         const uniqueCategories = [...new Set(response.data.map(food => food.category))];
-//         setFoodCategories(uniqueCategories);
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   }, []);
-
-// const handleSubmit = (e) => {
-//   e.preventDefault();
-
-//   if (!category || !foodName) {
-//     console.log("Please select a category and enter a food name");
-//     return;
-//   }
-
-//   const newFood = {
-//     category: parseInt(category),
-//     food: foodName,
-//   };
-
-//   axios.post('http://localhost:8000/foods/create/', newFood, {
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//   })
-//     .then((response) => {
-//       setFoods([...foods, response.data]);
-//       setFoodName('');
-//       setCategory('');
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-// };
-
-// const renderFoodCategories = () => {
-//   return (
-//     <select
-//       id="food-category"
-//       value={category}
-//       onChange={(e) => setCategory(e.target.value)}
-//       required
-//     >
-//       <option value="">Select a category</option>
-//       {foodCategories.map((category) => (
-//         <option key={category} value={category}>
-//           {category}
-//         </option>
-//       ))}
-//     </select>
-//   );
-// };
-
-//   return (
-//     <Container className="text-center">
-//       <div>
-//         <div style={{ justifyContent: "center", padding:"10px"}}>
-//           <h1>Upload Food</h1>
-//           <form onSubmit={handleSubmit}>
-//             <input
-//               type="text"
-//               placeholder="Name"
-//               value={foodName}
-//               onChange={(e) => setFoodName(e.target.value)}
-//               required
-//             />
-//             {renderFoodCategories()}
-//             <Button type="submit" variant="primary">Upload</Button>
-//           </form>
-//         </div>
-//       </div>
-//     </Container>
-//   );
-// };
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Form, FormGroup, FormControl, FormLabel, Button } from "react-bootstrap";
 
 export const FoodUpload = () => {
   const [categories, setCategories] = useState([]);
@@ -146,23 +53,24 @@ export const FoodUpload = () => {
   };
 
   return (
-    <div>
-      <h2>Add Food</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="category">Category:</label>
-        <select id="category" value={selectedCategory} onChange={handleCategoryChange} required>
-          <option value="">Select a category</option>
-          {categories.map(category => (
-            <option key={category.id} value={category.id}>{category.category}</option>
-          ))}
-        </select>
+    <container>
+      <div>
+        <h2>Add Food</h2>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="category">Category:</label>
+          <select id="category" value={selectedCategory} onChange={handleCategoryChange} required>
+            <option value="">Select a category</option>
+            {categories.map(category => (
+              <option key={category.id} value={category.id}>{category.category}</option>
+            ))}
+          </select>
 
-        <label htmlFor="foodName">Food Name:</label>
-        <input type="text" id="foodName" value={foodName} onChange={handleFoodNameChange} required />
-
-        <button type="submit">Add Food</button>
-      </form>
-    </div>
+          <label htmlFor="foodName">Food Name:</label>
+          <input type="text" id="foodName" value={foodName} onChange={handleFoodNameChange} required />
+          <Button type="submit">Add Food</Button>
+        </form>
+      </div>
+    </container>
   );
 };
 
