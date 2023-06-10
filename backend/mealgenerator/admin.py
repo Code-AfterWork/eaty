@@ -5,3 +5,4 @@ from .models import *
 
 admin.site.register(FoodCategory)
 admin.site.register(Food)
+admin.site.register(GeneratedMeal)

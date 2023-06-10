@@ -1,6 +1,6 @@
 from rest_framework import generics
 from .models import FoodCategory
-from .serializers import FoodCategorySerializer
+from .serializers import FoodCategorySerializer, GeneratedMealSerializer
 from rest_framework import permissions
 from core.permissions import IsOwnerOrReadOnly
 
@@ -28,9 +28,22 @@ class FoodCategoryList(APIView):
     
     permission_classes = [permissions.AllowAny]
 
-# handles POST
+# handles POST for uploaded foods
 class FoodCreateView(APIView):
     serializer_class =FoodCreateSerializer
+
+    permission_classes = [permissions.AllowAny]
+
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+# handle POST for generated meals
+class GeneratedMealView(APIView):
+    serializer_class = GeneratedMealSerializer
 
     permission_classes = [permissions.AllowAny]
 

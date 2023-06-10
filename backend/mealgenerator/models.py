@@ -14,3 +14,12 @@ class Food(models.Model):
 
     def __str__(self):
         return self.food
+
+
+## model to store generated meals from react
+class GeneratedMeal(models.Model):
+    id= models.AutoField(primary_key=True)
+    meal= models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.meal
