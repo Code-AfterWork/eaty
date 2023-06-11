@@ -4,52 +4,55 @@ import axios from 'axios';
 
 export const MealGenerator = () => {
   const [meal, setMeal] = useState(null);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/foods/')
-      .then((response) => {
-        const categories = response.data;
-        generateMeal(categories);
+    axios.get('http://127.0.0.1:8000/foods/')
+      .then(response => {
+        setCategories(response.data);
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(error => {
+        console.log('Error fetching categories:', error);
       });
   }, []);
 
-  const generateMeal = (categories) => {
-    const randomIndex = Math.floor(Math.random() * categories.length);
-    const randomCategory = categories[randomIndex];
-    const randomFood = getRandomFood(randomCategory.foods);
-    setMeal({ category: randomCategory.category, food: randomFood });
-  };
+  const generateMeal = () => {
+    if (categories.length < 3) {
+      console.log('Not enough categories to generate a meal');
+      return;
+    }
 
-  const getRandomFood = (foods) => {
-    const randomIndex = Math.floor(Math.random() * foods.length);
-    return foods[randomIndex].food; // <-- Access the "food" property
-  };
+    const selectedCategories = [];
+    while (selectedCategories.length < 3) {
+      const randomIndex = Math.floor(Math.random() * categories.length);
+      const category = categories[randomIndex];
+      if (!selectedCategories.includes(category)) {
+        selectedCategories.push(category);
+      }
+    }
 
-  const handleGenerateMeal = () => {
-    axios.get('http://localhost:8000/foods/')
-      .then((response) => {
-        const categories = response.data;
-        generateMeal(categories);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const mealFoods = selectedCategories.map(category => {
+      const randomIndex = Math.floor(Math.random() * category.food.length);
+      return category.food[randomIndex];
+    });
+
+    setMeal(mealFoods);
   };
 
   return (
     <Container className="text-center">
       <div>
-
-          <h1>Meal Generator</h1>
-          <Button onClick={handleGenerateMeal} variant="primary">Generate Meal</Button>
-          {meal && (
-            <div>
-              <h2>Category: {meal.category}</h2>
-              <h3>Food: {meal.food}</h3>
-            </div>
+        <h1>Meal Generator</h1>
+        <Button onClick={generateMeal} variant="primary">Generate Meal</Button>
+        {meal && (
+          <div>
+            <h2>Meal:</h2>
+            <ul>
+              {meal.map((food, index) => (
+                <li key={index}>{food}</li>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
     </Container>
