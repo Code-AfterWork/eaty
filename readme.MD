@@ -63,6 +63,8 @@ Login API: http://127.0.0.1:8000/api-auth/login/?next=/users/ <br>
 List of food categories: http://127.0.0.1:8000/foodcategories/ <br>
 API for Food items: http://127.0.0.1:8000/foods <br>
 User Registration: http://127.0.0.1:8000/api/register/ <br>
+POST generated meal: http://127.0.0.1:8000/foods/generatedmeal/<br>
+Generated Meals History: http://127.0.0.1:8000/foods/generatedmealhist/ <br>
 (Use a tool like Insomnia and send the POST request with the registration data ) 
 
 

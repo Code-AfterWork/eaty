@@ -37,6 +37,17 @@ export const MealGenerator = () => {
     });
 
     setMeal(mealFoods);
+
+    const mealString = mealFoods.join(', ');
+
+    axios.post('http://localhost:8000/foods/generatedmeal/', { meal: mealString })
+    .then(response => {
+      console.log('Meal successfully generated and posted');
+    })
+    .catch(error => {
+      console.log('Error generating or posting meal:', error);
+    });
+
   };
 
   return (

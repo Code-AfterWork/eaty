@@ -15,10 +15,24 @@ class FoodCategorySerializer(serializers.ModelSerializer):
         fields = ['id', 'category', 'food']
 
 
-# handles POST
+# handles POST for uploaded foods
 class FoodCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Food
         fields = ('id', 'category', 'food')
 
+
+
+# handle POST for generated meals
+class GeneratedMealSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GeneratedMeal
+        fields=('id', 'meal')
+
+# handles GEt for generatedmealshistory
+# handle POST for generated meals
+class GeneratedMealHistSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GeneratedMeal
+        fields=('id', 'meal')
