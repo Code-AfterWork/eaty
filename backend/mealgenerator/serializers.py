@@ -29,3 +29,10 @@ class GeneratedMealSerializer(serializers.ModelSerializer):
     class Meta:
         model = GeneratedMeal
         fields=('id', 'meal')
+
+# handles GEt for generatedmealshistory
+# handle POST for generated meals
+class GeneratedMealHistSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GeneratedMeal
+        fields=('id', 'meal')

@@ -1,12 +1,12 @@
 from rest_framework import generics
 from .models import FoodCategory
-from .serializers import FoodCategorySerializer, GeneratedMealSerializer
+from .serializers import FoodCategorySerializer, GeneratedMealSerializer, GeneratedMealHistSerializer
 from rest_framework import permissions
 from core.permissions import IsOwnerOrReadOnly
 
 
 from django.views.generic import CreateView
-from .models import Food
+from .models import Food, GeneratedMeal
 from .serializers import FoodCreateSerializer
 
 from rest_framework.views import APIView
@@ -53,3 +53,11 @@ class GeneratedMealView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+# gets generated meals
+class GeneratedMealHist(generics.ListAPIView):
+    queryset = GeneratedMeal.objects.all()
+    serializer_class = GeneratedMealHistSerializer
+
+    permission_classes = [permissions.AllowAny]    
