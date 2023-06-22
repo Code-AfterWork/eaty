@@ -2,13 +2,9 @@ from rest_framework import generics
 from .models import FoodCategory
 from .serializers import FoodCategorySerializer, GeneratedMealSerializer, GeneratedMealHistSerializer
 from rest_framework import permissions
-from core.permissions import IsOwnerOrReadOnly
-
-
 from django.views.generic import CreateView
 from .models import Food, GeneratedMeal
 from .serializers import FoodCreateSerializer
-
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status

@@ -51,7 +51,7 @@ serializers convert data from and to json objects <br>
 ## Django Rest Framework API, Project Structure
 Django structures its architecture as apps. Each app to handle a specific function.
 eaty <------ Main Django Project (Created by ``django-admin startproject eaty``)<br>
-core <------- This handles our user accounts and authentication<br>
+accounts <------- This handles our user accounts and authentication<br>
 blog <------- blogging section/food blog<br>
 mealgenerator < -------- gets list of food from users, stores, daily generates meal from this list
 

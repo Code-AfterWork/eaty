@@ -2,9 +2,7 @@ from django.shortcuts import render
 from blog.models import Post
 from rest_framework import generics
 from  blog import serializers
-
 from rest_framework import permissions
-from core.permissions import IsOwnerOrReadOnly
 
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
