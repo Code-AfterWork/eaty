@@ -28,6 +28,8 @@ class FoodCategoryList(APIView):
     
     permission_classes = [permissions.AllowAny]
 
+
+
 # handles POST for uploaded foods
 class FoodCreateView(APIView):
     serializer_class =FoodCreateSerializer
@@ -40,6 +42,9 @@ class FoodCreateView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+
 
 # handle POST for generated meals
 class GeneratedMealView(APIView):
