@@ -2,7 +2,8 @@
 [Sprint-1 Review](https://www.youtube.com/watch?v=rFlxb11Zf5Y&t=405s)<br>
 [Containerizing our API](https://www.youtube.com/watch?v=txr1_Eme6nM)
 
-## How to run
+# How to run
+## Method 1 - With Docker
 To run the project as is and play around before you make changes, you should have docker and a preferred code editor installed.
 
 Install [docker](https://medium.com/@mosesmbadi/what-is-devops-part-2-containerization-8b8b65cf8f96)
@@ -21,6 +22,8 @@ python manage.py migrate
 '82752d8c2b76' <-- refers to the container ID. You can get the ID by running 
 ``docker ps``
 
+
+## Method 2 - Manually in a Virtual Env
 #### If you prefer not using docker (docker images can be data consuming if you're on limited data) you can run manually with this steps
 Set Up virtual environment, I'm assuming you have virtualenv installed
 Change to sqlite3 in settings by uncommenting and commenting the appropriate sections
@@ -48,7 +51,7 @@ serializers convert data from and to json objects <br>
 ## Django Rest Framework API, Project Structure
 Django structures its architecture as apps. Each app to handle a specific function.
 eaty <------ Main Django Project (Created by ``django-admin startproject eaty``)<br>
-core <------- This handles our user accounts and authentication<br>
+accounts <------- This handles our user accounts and authentication<br>
 blog <------- blogging section/food blog<br>
 mealgenerator < -------- gets list of food from users, stores, daily generates meal from this list
 
