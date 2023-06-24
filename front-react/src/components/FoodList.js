@@ -28,19 +28,18 @@ export const FoodList = () => {
       <div>
           <div style={{ display: "flex", flexDirection: "row", padding:"20px",  justifyContent: "center" }}>
               {foods.map((food) => (
-              <CardGroup key={food.id} style ={{padding: "10px",}}>
+              <CardGroup key={food.index} style ={{padding: "10px",}}>
                 <Card>
                   <Card.Body>
                     <Card.Title>{food.category}</Card.Title>
                     <Card.Text>
                       <ul>
-                        <li>{food.food}</li>
+                        {food.food.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
                       </ul>
                     </Card.Text>
                   </Card.Body>
-                  <Card.Footer>
-                    {/* <small className="text-muted">Suggest Feedback</small> */}
-                  </Card.Footer>
                 </Card>
               </CardGroup>
             ))}

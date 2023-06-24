@@ -56,8 +56,8 @@ export const FoodUpload = () => {
     <container>
       <div>
         <h2>Add Food</h2>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="category">Category:</label>
+        <form onSubmit={handleSubmit} style={{margin:'10px'}}>
+          <label htmlFor="category" style={{margin:'10px'}}>Category:</label>
           <select id="category" value={selectedCategory} onChange={handleCategoryChange} required>
             <option value="">Select a category</option>
             {categories.map(category => (
@@ -65,9 +65,9 @@ export const FoodUpload = () => {
             ))}
           </select>
 
-          <label htmlFor="foodName">Food Name:</label>
+          <label htmlFor="foodName" style={{margin:'10px'}}>Food Name:</label>
           <input type="text" id="foodName" value={foodName} onChange={handleFoodNameChange} required />
-          <Button type="submit">Add Food</Button>
+          <Button type="submit" style={{margin:'10px'}}>Add Food</Button>
         </form>
       </div>
     </container>

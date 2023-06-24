@@ -7,7 +7,7 @@ import { Container, Button } from 'react-bootstrap';
 
 import {FoodUpload} from '../components/FoodUpload.js'
 import {FoodList} from '../components/FoodList.js'
-import {MealGenerator} from '../components/MealGenerator.js';
+
 import {MealGenHistory} from '../components/MealGenHistory';
 import {Hero} from '../components/hero.js';
 
@@ -31,7 +31,6 @@ export const HomeScreen = () => {
     <Container className="text-center">
       <div>
         <Hero></Hero>
-        <MealGenerator></MealGenerator>
         <FoodList></FoodList>
         <FoodUpload></FoodUpload>
         <MealGenHistory></MealGenHistory>

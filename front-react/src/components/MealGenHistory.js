@@ -20,19 +20,16 @@ export const MealGenHistory = () => {
 
   return (
     <div>
-      <h1>Meal List</h1>
+      <h4>What people are eating</h4>
       <CardGroup>
         {meals.map(meal => (
           <Card key={meal.id}>
             <Card.Body>
-              <Card.Title>Meal</Card.Title>
+              {/* <Card.Title>Meal</Card.Title> */}
               <Card.Text>
                 {meal.meal}
               </Card.Text>
             </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">ID: {meal.id}</small>
-            </Card.Footer>
           </Card>
         ))}
       </CardGroup>
