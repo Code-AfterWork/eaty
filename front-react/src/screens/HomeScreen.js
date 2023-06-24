@@ -9,7 +9,7 @@ import {FoodUpload} from '../components/FoodUpload.js'
 import {FoodList} from '../components/FoodList.js'
 import {MealGenerator} from '../components/MealGenerator.js';
 import {MealGenHistory} from '../components/MealGenHistory';
-
+import {Hero} from '../components/hero.js';
 
 export const HomeScreen = () => {
   const [foods, setFoods] = useState([]);
@@ -31,7 +31,7 @@ export const HomeScreen = () => {
     <Container className="text-center">
       <div>
         <MealGenerator></MealGenerator>
-
+        <Hero></Hero>
         <FoodList></FoodList>
         <FoodUpload></FoodUpload>
         <MealGenHistory></MealGenHistory>
