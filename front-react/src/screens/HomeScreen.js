@@ -30,8 +30,8 @@ export const HomeScreen = () => {
   return (
     <Container className="text-center">
       <div>
-        <MealGenerator></MealGenerator>
         <Hero></Hero>
+        <MealGenerator></MealGenerator>
         <FoodList></FoodList>
         <FoodUpload></FoodUpload>
         <MealGenHistory></MealGenHistory>

@@ -1,3 +1,4 @@
+
 import { Container, Button } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -53,18 +54,7 @@ export const MealGenerator = () => {
   return (
     <Container className="text-center">
       <div>
-        <h1>Meal Generator</h1>
-        <Button onClick={generateMeal} variant="primary">Generate Meal</Button>
-        {meal && (
-          <div>
-            <h2>Meal:</h2>
-            <ul>
-              {meal.map((food, index) => (
-                <li key={index}>{food}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+
       </div>
     </Container>
   );
