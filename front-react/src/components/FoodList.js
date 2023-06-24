@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import {LandingPage, MealGenerator} from './MealGenerator.js';
+import {LandingPage, MealGenerator} from './hero.js';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import { Container, Button } from 'react-bootstrap';

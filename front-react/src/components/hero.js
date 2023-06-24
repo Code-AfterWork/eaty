@@ -1,5 +1,8 @@
 import hero1 from "../assets/hero1.png"
-import { FaUpload, FaPlayCircle } from 'react-icons/fa';
+import { FaUpload, FaPlayCircle, silfood} from 'react-icons/fa';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faPenNib } from '@fortawesome/free-solid-svg-icons'
 
 import { Container, Button } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
@@ -57,7 +60,11 @@ export const Hero = () => {
   return (
     <div style={{ display: 'flex', marginTop: '70px'}}>
 
-      <div className='hero-body' style={{ flex: 1, marginLeft: '70px'}}>
+      <div className='hero-image' style={{ flex: 1 }}>
+        <img src={hero1} alt="Hero Image" style={{ width: '70%', height: 'auto', marginLeft: '90px'}} />
+      </div>
+
+      <div className='hero-body' style={{ flex: 1}}>
         <div style={{ alignItems: 'left' }}>
           <h2 style={{ fontSize: '3rem', textAlign:'left'}}>Tupike nini? <br/>
             Wewe unaona tupike nini?
@@ -67,33 +74,36 @@ export const Hero = () => {
             food recomendations every evening?  Well, we could be that someone 😉. 
           </p>
 
-          <h4 style={{ fontSize: '1.3 rem', textAlign:'left'}}>Get meal recomendations in two steps!</h4>
-          <div style={{ display: 'inline-flex', alignItems: 'left' }}>
-            <FaUpload size={30} style={{ marginRight: '10px' }} />
-            <span>Upload meals</span>
+          <h4 style={{ fontSize: '1.3 rem', textAlign:'left', marginTop:'20px'}}>Get meal recomendations in two steps!</h4>
+
+          <div style={{ marginRight:'200px'}}>
+            <div style={{ display: 'inline-flex',}}>
+                <FontAwesomeIcon icon="fa-solid fa-upload" style={{ margin: '10px' }}/>
+                <Button variant="outline-dark">Upload Meal</Button>
+            </div>
+            <div style={{ display: 'inline-flex', alignItems: 'center'}}>
+                <FontAwesomeIcon icon="fa-solid fa-bowl-food" style={{ margin: '10px' }}/>
+                <Button onClick={generateMeal} variant="primary">Generate meal</Button>
+            </div>    
           </div>
-          <div style={{ display: 'inline-flex', alignItems: 'center'}}>
-            <FaPlayCircle size={30} style={{ marginRight: '10px' }} />
-            <Button onClick={generateMeal} variant="primary">Generate meal</Button>
-            <div className="card"  style={{ display:'-ms-inline-flexbox', marginLeft: '70px'}}>
+
+          <div className="card"  style={{ display:'-ms-inline-flexbox', margin: '20px'}}>
                 {meal && (
-                <div>
+                <div style={{ display: 'flex'}}>
                     <h4>Your Meal is:</h4>
-                    <li className="list-inline">
-                    {meal.map((food, index) => (
-                        <li key={index}>{food}</li>
+                    <li style={{ display: 'flex'}}>
+                    {meal.map((food) => (
+                        // <li key={index}>{food}</li>
+                        <li>{food}</li>
                     ))}
                     </li>
                 </div>
                 )}
-            </div>  
-          </div>
+          </div>  
+
         </div>
       </div>
 
-      <div className='hero-image' style={{ flex: 0.8 }}>
-        <img src={hero1} alt="Hero Image" style={{ width: '50%', height: 'auto' }} />
-      </div>
 
     </div>
   );
