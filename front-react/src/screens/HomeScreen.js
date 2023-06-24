@@ -7,9 +7,9 @@ import { Container, Button } from 'react-bootstrap';
 
 import {FoodUpload} from '../components/FoodUpload.js'
 import {FoodList} from '../components/FoodList.js'
-import {MealGenerator} from '../components/MealGenerator.js';
-import {MealGenHistory} from '../components/MealGenHistory';
 
+import {MealGenHistory} from '../components/MealGenHistory';
+import {Hero} from '../components/hero.js';
 
 export const HomeScreen = () => {
   const [foods, setFoods] = useState([]);
@@ -30,8 +30,7 @@ export const HomeScreen = () => {
   return (
     <Container className="text-center">
       <div>
-        <MealGenerator></MealGenerator>
-
+        <Hero></Hero>
         <FoodList></FoodList>
         <FoodUpload></FoodUpload>
         <MealGenHistory></MealGenHistory>

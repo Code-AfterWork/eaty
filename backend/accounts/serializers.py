@@ -40,3 +40,10 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
+    
+
+# User serializer
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = '__all__'    
