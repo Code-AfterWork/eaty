@@ -1,3 +1,5 @@
+[![Build and Push Docker Image](https://github.com/Code-AfterWork/eaty/actions/workflows/push-to-registry.yml/badge.svg?branch=main)](https://github.com/Code-AfterWork/eaty/actions/workflows/push-to-registry.yml)
+
 ## Video Tutorials <br>
 [Sprint-1 Review](https://www.youtube.com/watch?v=rFlxb11Zf5Y&t=405s)<br>
 [Containerizing our API](https://www.youtube.com/watch?v=txr1_Eme6nM)

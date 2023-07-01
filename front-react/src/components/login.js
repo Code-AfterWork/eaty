@@ -4,26 +4,23 @@ import {Navigate} from "react-router-dom";
 import {useState} from "react";
 
 export const Login = () => {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const submit = async e => {
         e.preventDefault();
 
-        const user = {
-            username: username,
-            password: password
-          };
+        const response = await axios.post('http://localhost:8000/login/', {
+          email,
+          password
 
-        const {data} = await axios.post('http://localhost:8000/token/', user ,{headers: {
-            'Content-Type': 'application/json'
-        }}, {withCredentials: true});
+        });
 
-        console.log(data)
-        localStorage.clear();
-        localStorage.setItem('access_token', data.access);
-        localStorage.setItem('refresh_token', data.refresh);
-        axios.defaults.headers.common['Authorization'] = `Bearer ${data['access']}`;
+        const { access, refresh } = response.data.tokens;
+
+        localStorage.setItem("accessToken", access);
+        localStorage.setItem("refreshToken", refresh);
+
         window.location.href = '/'
 
     }
@@ -34,15 +31,15 @@ export const Login = () => {
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Sign In</h3>
             <div className="form-group mt-3">
-              <label>Username</label>
+              <label>Email</label>
               <input
                 className="form-control mt-1"
-                placeholder="Enter Username"
-                name='username'
+                placeholder="Enter Email"
+                name='email'
                 type='text'
-                value={username}
+                value={email}
                 required
-                onChange={e => setUsername(e.target.value)}
+                onChange={e => setEmail(e.target.value)}
               />
             </div>
             <div className="form-group mt-3">

@@ -6,7 +6,7 @@ export function Navigation() {
   const [isAuth, setIsAuth] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem('access_token') !== null) {
+    if (localStorage.getItem('accessToken') !== null) {
       setIsAuth(true);
     }
   }, [isAuth]);

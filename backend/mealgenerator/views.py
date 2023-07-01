@@ -8,6 +8,18 @@ from .serializers import FoodCreateSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import AllowAny, IsAuthenticated
+
+from rest_framework.authentication import TokenAuthentication
+
+
+class FoodCreatePermission(permissions.BasePermission):
+
+    def has_object_permission(self, request, view, food, obj):
+        if request.method in permissions.SAFE_METHODS:
+            return True
+        return food.user == request.user
+    
 
 
 class FoodList(generics.ListAPIView):
@@ -27,12 +39,13 @@ class FoodCategoryList(APIView):
 
 
 # handles POST for uploaded foods
-class FoodCreateView(APIView):
-    serializer_class =FoodCreateSerializer
-
-    permission_classes = [permissions.AllowAny]
+class FoodCreateView(APIView, FoodCreatePermission):
+    permission_classes = [IsAuthenticated, FoodCreatePermission]
 
     def post(self, request):
+        if not request.user.is_authenticated:
+            return Response("Authentication credentials not provided.", status=status.HTTP_401_UNAUTHORIZED)
+        
         serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -40,12 +53,13 @@ class FoodCreateView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 
+    
+
 
 
 # handle POST for generated meals
 class GeneratedMealView(APIView):
     serializer_class = GeneratedMealSerializer
-
     permission_classes = [permissions.AllowAny]
 
     def post(self, request):

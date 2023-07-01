@@ -4,16 +4,16 @@ import axios from 'axios';
 
 export const RegisterUser = () => {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [password2, setPassword2] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     axios.post('http://127.0.0.1:8000/accounts/register/', {
       username,
+      email,
       password,
-      password2,
     })
       .then((response) => {
         console.log(response);
@@ -41,15 +41,15 @@ export const RegisterUser = () => {
           />
         </div>
         <div className="form-group mt-3">
-          <label>Password</label>
+          <label>Email</label>
           <input
-            name='password'
-            type="password"
+            name='email'
+            type="email"
             className="form-control mt-1"
-            placeholder="Enter password"
-            value={password}
+            placeholder="Enter email"
+            value={email}
             required
-            onChange={e => setPassword(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
           />
 
             <label>Password</label>
@@ -58,9 +58,9 @@ export const RegisterUser = () => {
               type="password"
               className="form-control mt-1"
               placeholder="Confirm password"
-              value={password2}
+              value={password}
               required
-              onChange={e => setPassword2(e.target.value)}
+              onChange={e => setPassword(e.target.value)}
           />
         </div>
         <div className="d-grid gap-2 mt-3">

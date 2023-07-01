@@ -12,7 +12,7 @@ class FoodCategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = FoodCategory
-        fields = ['id', 'category', 'food']
+        fields = '__all__'
 
 
 # handles POST for uploaded foods
@@ -20,7 +20,7 @@ class FoodCreateSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Food
-        fields = ('id', 'category', 'food')
+        fields = '__all__'
 
 
 
