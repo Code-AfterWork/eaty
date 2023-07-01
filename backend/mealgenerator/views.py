@@ -1,6 +1,6 @@
 from rest_framework import generics
 from .models import FoodCategory
-from .serializers import FoodCategorySerializer, GeneratedMealSerializer, GeneratedMealHistSerializer
+from .serializers import FoodCategorySerializer, GeneratedMealSerializer, GeneratedMealHistSerializer, FoodCreateSerializer
 from rest_framework import permissions
 from django.views.generic import CreateView
 from .models import Food, GeneratedMeal
@@ -14,7 +14,6 @@ from rest_framework.authentication import TokenAuthentication
 
 
 class FoodCreatePermission(permissions.BasePermission):
-
     def has_object_permission(self, request, view, food, obj):
         if request.method in permissions.SAFE_METHODS:
             return True
@@ -40,7 +39,8 @@ class FoodCategoryList(APIView):
 
 # handles POST for uploaded foods
 class FoodCreateView(APIView, FoodCreatePermission):
-    permission_classes = [IsAuthenticated, FoodCreatePermission]
+    permission_classes = [AllowAny, FoodCreatePermission]
+    serializer_class = FoodCreateSerializer
 
     def post(self, request):
         if not request.user.is_authenticated:

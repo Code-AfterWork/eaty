@@ -13,9 +13,8 @@ class FoodCategory(models.Model):
 class Food(models.Model):
     food = models.CharField(max_length=100)
     category = models.ForeignKey(FoodCategory, on_delete=models.CASCADE)
-
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, default='1')
-
+    
     def __str__(self):
         return self.food
 

@@ -46,7 +46,8 @@ import { Form, FormGroup, FormControl, FormLabel, Button } from "react-bootstrap
       // Send POST request to the API endpoint with the Authorization header
       axios.post('http://127.0.0.1:8000/foods/create/', payload, {
         headers: {
-          accessToken,
+          'Content-Type': 'application/json',
+          "Authorization": "Bearer " + accessToken,
           refreshToken
         },
       })

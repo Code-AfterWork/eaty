@@ -142,6 +142,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         # this means only authenticated users can edit data the rest can just view
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+        #   'rest_framework.permissions.AllowAny',
     ],
 }
 

@@ -17,7 +17,6 @@ class FoodCategorySerializer(serializers.ModelSerializer):
 
 # handles POST for uploaded foods
 class FoodCreateSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Food
         fields = '__all__'
