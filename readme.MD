@@ -62,12 +62,12 @@ mealgenerator < -------- gets list of food from users, stores, daily generates m
 ./backend/eaty/settings.py <---- main settings and config file <br>
 
 Admin login using superuser credentials: http://127.0.0.1:8000/admin <br>
-Get a list of users: http://127.0.0.1:8000/users/ <br>
+Get a list of users: http://127.0.0.1:8000/users/ <br> 
 Get a list of Posts: http://127.0.0.1:8000/posts/ <br>
-Login API: http://127.0.0.1:8000/api-auth/login/?next=/users/ <br>
-List of food categories: http://127.0.0.1:8000/foodcategories/ <br>
+Login API: http://127.0.0.1:8000/accounts/login/ <br>
+List of food categories: http://127.0.0.1:8000/foods/categories/ <br>
 API for Food items: http://127.0.0.1:8000/foods <br>
-User Registration: http://127.0.0.1:8000/api/register/ <br>
+User Registration: http://127.0.0.1:8000/accounts/register/ <br>
 POST generated meal: http://127.0.0.1:8000/foods/generatedmeal/<br>
 Generated Meals History: http://127.0.0.1:8000/foods/generatedmealhist/ <br>
 (Use a tool like Insomnia and send the POST request with the registration data ) 
